@@ -1,0 +1,204 @@
+// Debug Ghost Elements
+* {
+  // background: #000 !important;
+  // color: #0f0 !important;
+  // outline: solid magenta 1px !important;
+  box-sizing: border-box;
+}
+
+
+
+
+.first-layer-heading,
+.first-layer-description {
+  background-color: blue;
+}
+
+.second-layer-heading,
+.second-layer-description {
+  background-color: red;
+}
+
+.third-layer-heading,
+.third-layer-description {
+  background-color: green;
+}
+
+.fourth-layer-heading,
+.fourth-layer-description {
+  background-color: yellow;
+}
+
+.layer-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.layer-heading {
+  flex-basis: 30%;
+}
+
+.layer-description {
+  flex-basis: 65%;
+}
+
+// COLUMN PAGE!!!
+
+// First example!
+
+.column-layout {
+  background-color: gray;
+  padding: 20px 50px;
+  margin: 40px auto 0 auto;
+  line-height: 1.65;
+}
+
+.main-column {
+  flex: 2;
+  order: 2;
+  padding: 10px;
+}
+
+.sidebar-1 {
+  flex: 1;
+  order: 1;
+  padding: 10px;
+}
+
+.sidebar-2 {
+  flex: 1;
+  order: 3;
+  padding: 10px;
+}
+
+@media (min-width: 750px) {
+  .column-layout {
+    display: flex;
+  }
+}
+
+
+
+//  Second example!
+
+.parent-container {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+}
+
+.callout {
+  padding: 20px;
+  margin-bottom: 20px;
+  flex-basis: 30%;
+}
+
+
+.callout:nth-child(1) {background-color: blue;}
+.callout:nth-child(2) {background-color: red;}
+.callout:nth-child(3) {background-color: green;}
+
+
+@media (min-width: 750px) {
+  .parent-container {
+  justify-content: space-between;
+  display: flex;
+    
+  }
+} 
+
+// ANOTHER EXCERCISE!
+
+// Several items in a row...
+
+.photo-parent {
+  max-width: 1400px;
+  margin: 40px auto 0 auto;
+  background-color: black;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.photo-item {
+  width: 150px;
+  height: 100px;
+  background-color: purple;
+  color: #FFF;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+// ANOTHER EXAMPLE!
+
+// Center box!
+
+.center-parent {
+  height: 400px;
+  max-width: 700px;
+  margin: 40px auto 40px auto;
+  background-color: #2a2a2a;
+  display: flex;
+  
+}
+
+.center-object {
+  color: #FFF;
+  font-size: 50px;
+  margin: auto;
+}
+
+// ANOTHER EXAMPLE!
+
+// Vertical space sharing
+
+.insception-container {
+  margin: 0 auto;
+  // display: flex; 
+  margin-bottom: 20px;
+}
+
+.item {
+  background-color: gray;
+  padding: 20px;
+  flex: 2;
+}
+
+.item-sub-container {
+  // background-color: yellow;
+  flex: 1;
+  // display: flex;
+  // flex-direction: column;
+}
+
+
+.sub-item-1 {
+  background-color: red;
+  flex: 1;  
+}
+
+.sub-item-2 {
+  background-color: green;
+  flex: 1;  
+}
+
+.item-sub-container > div {
+  height: 100%;
+}
+
+@media (min-width: 750px) {
+  .insception-container {
+    display: flex;
+  }
+  
+  .item-sub-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
