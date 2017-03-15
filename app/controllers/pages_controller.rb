@@ -7,5 +7,8 @@ class PagesController < ApplicationController
   def columns
   end
   
+  def strat
+  end
+  
   
 end

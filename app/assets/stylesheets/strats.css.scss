@@ -1,0 +1,658 @@
+// CUSTOM SVG CSS
+
+.svg-bg {
+  background-color: #efefef;  
+}
+
+#hitbox-fill {
+  mix-blend-mode: multiply;
+}
+
+rect.unit-heading-extend {
+  width: 61.4%;
+  // fill: rgba(122, 206, 210, 0.52);
+  mix-blend-mode: normal;
+  stroke: none;
+  // stroke: transparent;
+}
+
+text.hover-mode {
+  fill: red; 
+}
+
+
+// SVG GENERATED CSS
+
+.cls-1, .cls-10, .cls-137, .cls-138, .cls-2, .cls-3, .cls-4, .cls-6, .cls-7 {
+  fill: none;
+}
+
+.cls-12, .cls-13, .cls-137, .cls-138, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-2, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47 {
+  stroke: #231f20;
+}
+
+.cls-2, .cls-3 {
+  stroke-width: 0.3px;
+}
+
+.cls-10, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9 {
+  stroke: #000;
+}
+
+.cls-4 {
+  stroke-linecap: round;
+  stroke-width: 0.7px;
+}
+
+.cls-133, .cls-5, .cls-8, .cls-9 {
+  fill: #fff;
+}
+
+.cls-5, .cls-6 {
+  stroke-width: 0.5px;
+}
+
+.cls-10, .cls-9 {
+  stroke-width: 0.36px;
+}
+
+.cls-11 {
+  isolation: isolate;
+}
+
+.cls-12 {
+  fill: #eaeb84;
+}
+
+.cls-12, .cls-13, .cls-138, .cls-14, .cls-15, .cls-16, .cls-17 {
+  stroke-width: 2px;
+}
+
+.cls-13 {
+  fill: #f89622;
+}
+
+.cls-14 {
+  fill: #554742;
+}
+
+.cls-15 {
+  fill: #6772b6;
+}
+
+.cls-16 {
+  fill: #997e6b;
+}
+
+.cls-17 {
+  fill: #7aced2;
+}
+
+.cls-132, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-72 {
+  mix-blend-mode: multiply;
+}
+
+.cls-18 {
+  fill: url(#Limestone);
+}
+
+.cls-19 {
+  fill: url(#Limestone-3);
+}
+
+.cls-20 {
+  fill: url(#Limestone-7);
+}
+
+.cls-21 {
+  fill: url(#Limestone-9);
+}
+
+.cls-22 {
+  fill: url(#Limestone-11);
+}
+
+.cls-23 {
+  fill: url(#Limestone-13);
+}
+
+.cls-24 {
+  fill: url(#Limestone-15);
+}
+
+.cls-25 {
+  fill: url(#Limestone-17);
+}
+
+.cls-26 {
+  fill: url(#Limestone-21);
+}
+
+.cls-27 {
+  fill: url(#Limestone-23);
+}
+
+.cls-28 {
+  fill: url(#Limestone-25);
+}
+
+.cls-29 {
+  fill: url(#Limestone-27);
+}
+
+.cls-30 {
+  fill: url(#Limestone-29);
+}
+
+.cls-31 {
+  fill: url(#Limestone-31);
+}
+
+.cls-32 {
+  fill: url(#_623);
+}
+
+.cls-33 {
+  fill: url(#Limestone-33);
+}
+
+.cls-34 {
+  fill: url(#Limestone-35);
+}
+
+.cls-35 {
+  fill: url(#Limestone-37);
+}
+
+.cls-36 {
+  fill: url(#_623-3);
+}
+
+.cls-37 {
+  fill: url(#Limestone-39);
+}
+
+.cls-38 {
+  fill: url(#Limestone-41);
+}
+
+.cls-39 {
+  fill: url(#Limestone-43);
+}
+
+.cls-40 {
+  fill: url(#Limestone-45);
+}
+
+.cls-41 {
+  fill: url(#Limestone-47);
+}
+
+.cls-42 {
+  fill: url(#silt);
+}
+
+.cls-43 {
+  fill: url(#Limestone-49);
+}
+
+.cls-44 {
+  fill: url(#Limestone-51);
+}
+
+.cls-45 {
+  fill: url(#silt-3);
+}
+
+.cls-46 {
+  fill: url(#Limestone-53);
+}
+
+.cls-47 {
+  fill: url(#Limestone-55);
+}
+
+.cls-48, .cls-72 {
+  font-size: 10px;
+}
+
+.cls-132, .cls-135, .cls-136, .cls-140, .cls-141, .cls-142, .cls-148, .cls-48, .cls-72, .cls-88 {
+  fill: #231f20;
+}
+
+.cls-140, .cls-141, .cls-142, .cls-148, .cls-48, .cls-72, .cls-88 {
+  font-family: MyriadPro-Regular, Myriad Pro;
+}
+
+.cls-49 {
+  letter-spacing: -0.01em;
+}
+
+.cls-50 {
+  letter-spacing: -0.01em;
+}
+
+.cls-51 {
+  letter-spacing: -0.01em;
+}
+
+.cls-52 {
+  letter-spacing: 0em;
+}
+
+.cls-53 {
+  letter-spacing: 0em;
+}
+
+.cls-54 {
+  letter-spacing: -0.01em;
+}
+
+.cls-55 {
+  letter-spacing: -0.01em;
+}
+
+.cls-56 {
+  letter-spacing: -0.02em;
+}
+
+.cls-57 {
+  letter-spacing: 0em;
+}
+
+.cls-58 {
+  letter-spacing: 0em;
+}
+
+.cls-59 {
+  letter-spacing: 0em;
+}
+
+.cls-60 {
+  letter-spacing: -0.01em;
+}
+
+.cls-61 {
+  letter-spacing: 0em;
+}
+
+.cls-62 {
+  letter-spacing: 0em;
+}
+
+.cls-63 {
+  letter-spacing: 0em;
+}
+
+.cls-64 {
+  letter-spacing: 0em;
+}
+
+.cls-65 {
+  letter-spacing: 0.01em;
+}
+
+.cls-66 {
+  letter-spacing: -0.01em;
+}
+
+.cls-67 {
+  letter-spacing: -0.01em;
+}
+
+.cls-68 {
+  letter-spacing: -0.01em;
+}
+
+.cls-69 {
+  letter-spacing: -0.01em;
+}
+
+.cls-70 {
+  letter-spacing: -0.01em;
+}
+
+.cls-71 {
+  letter-spacing: -0.01em;
+}
+
+.cls-73 {
+  letter-spacing: -0.01em;
+}
+
+.cls-74 {
+  letter-spacing: 0.01em;
+}
+
+.cls-75 {
+  letter-spacing: -0.03em;
+}
+
+.cls-76 {
+  letter-spacing: 0.02em;
+}
+
+.cls-77 {
+  letter-spacing: 0.01em;
+}
+
+.cls-78 {
+  letter-spacing: 0.03em;
+}
+
+.cls-79 {
+  letter-spacing: -0.01em;
+}
+
+.cls-80 {
+  letter-spacing: 0.01em;
+}
+
+.cls-81 {
+  letter-spacing: -0.01em;
+}
+
+.cls-82 {
+  letter-spacing: -0.07em;
+}
+
+.cls-83 {
+  letter-spacing: -0.01em;
+}
+
+.cls-84 {
+  letter-spacing: 0.01em;
+}
+
+.cls-85 {
+  letter-spacing: 0.02em;
+}
+
+.cls-86 {
+  letter-spacing: -0.03em;
+}
+
+.cls-87 {
+  letter-spacing: 0em;
+}
+
+.cls-133, .cls-135, .cls-136, .cls-88 {
+  font-size: 12px;
+}
+
+.cls-89 {
+  letter-spacing: 0em;
+}
+
+.cls-90 {
+  letter-spacing: -0.01em;
+}
+
+.cls-91 {
+  letter-spacing: -0.01em;
+}
+
+.cls-92 {
+  letter-spacing: -0.01em;
+}
+
+.cls-93 {
+  letter-spacing: -0.01em;
+}
+
+.cls-94 {
+  letter-spacing: 0.01em;
+}
+
+.cls-95 {
+  letter-spacing: 0em;
+}
+
+.cls-96 {
+  letter-spacing: 0em;
+}
+
+.cls-97 {
+  letter-spacing: 0em;
+}
+
+.cls-98 {
+  letter-spacing: 0em;
+}
+
+.cls-99 {
+  letter-spacing: -0.01em;
+}
+
+.cls-100 {
+  letter-spacing: 0em;
+}
+
+.cls-101 {
+  letter-spacing: -0.01em;
+}
+
+.cls-102 {
+  letter-spacing: 0em;
+}
+
+.cls-103 {
+  letter-spacing: -0.01em;
+}
+
+.cls-104 {
+  letter-spacing: 0.01em;
+}
+
+.cls-105 {
+  letter-spacing: -0.01em;
+}
+
+.cls-106 {
+  letter-spacing: -0.01em;
+}
+
+.cls-107 {
+  letter-spacing: 0em;
+}
+
+.cls-108 {
+  letter-spacing: -0.01em;
+}
+
+.cls-109 {
+  letter-spacing: -0.01em;
+}
+
+.cls-110 {
+  letter-spacing: 0em;
+}
+
+.cls-111 {
+  letter-spacing: 0em;
+}
+
+.cls-112 {
+  letter-spacing: -0.05em;
+}
+
+.cls-113 {
+  letter-spacing: 0em;
+}
+
+.cls-114 {
+  letter-spacing: -0.01em;
+}
+
+.cls-115 {
+  letter-spacing: 0em;
+}
+
+.cls-116 {
+  letter-spacing: -0.04em;
+}
+
+.cls-117 {
+  letter-spacing: 0em;
+}
+
+.cls-118 {
+  letter-spacing: -0.01em;
+}
+
+.cls-119 {
+  letter-spacing: 0em;
+}
+
+.cls-120 {
+  letter-spacing: -0.04em;
+}
+
+.cls-121 {
+  letter-spacing: -0.03em;
+}
+
+.cls-122 {
+  letter-spacing: -0.01em;
+}
+
+.cls-123 {
+  letter-spacing: 0.03em;
+}
+
+.cls-124 {
+  letter-spacing: 0.02em;
+}
+
+.cls-125 {
+  letter-spacing: -0.01em;
+}
+
+.cls-126 {
+  letter-spacing: -0.01em;
+}
+
+.cls-127 {
+  letter-spacing: -0.05em;
+}
+
+.cls-128 {
+  letter-spacing: 0.01em;
+}
+
+.cls-129 {
+  letter-spacing: -0.03em;
+}
+
+.cls-130 {
+  letter-spacing: -0.09em;
+}
+
+.cls-131 {
+  letter-spacing: -0.01em;
+}
+
+.cls-132 {
+  opacity: 0.24;
+}
+
+.cls-133, .cls-136 {
+  font-family: Arial-BoldMT, Arial;
+  font-weight: 700;
+}
+
+.cls-134 {
+  letter-spacing: -0.06em;
+}
+
+.cls-135 {
+  font-family: ArialMT, Arial;
+}
+
+.cls-137 {
+  stroke-width: 3px;
+}
+
+.cls-139 {
+  letter-spacing: 0em;
+}
+
+.cls-140, .cls-142, .cls-148 {
+  font-size: 9px;
+}
+
+.cls-141 {
+  font-size: 8.97px;
+}
+
+.cls-142 {
+  letter-spacing: -0.01em;
+}
+
+.cls-143 {
+  letter-spacing: 0em;
+}
+
+.cls-144 {
+  letter-spacing: -0.01em;
+}
+
+.cls-145 {
+  letter-spacing: 0em;
+}
+
+.cls-146 {
+  letter-spacing: -0.03em;
+}
+
+.cls-147 {
+  letter-spacing: 0em;
+}
+
+.cls-148 {
+  letter-spacing: -0.01em;
+}
+
+.cls-149 {
+  letter-spacing: 0em;
+}
+
+.cls-150 {
+  letter-spacing: 0em;
+}
+
+.cls-151 {
+  letter-spacing: -0.04em;
+}
+
+.cls-152 {
+  letter-spacing: 0.01em;
+}
+
+.cls-153 {
+  letter-spacing: 0em;
+}
+
+.cls-154 {
+  letter-spacing: 0.02em;
+}
+
+.cls-155 {
+  letter-spacing: -0.07em;
+}
+
+.cls-156 {
+  letter-spacing: -0.08em;
+}
+
+.cls-157 {
+  letter-spacing: -0.08em;
+}
+
+.cls-158 {
+  letter-spacing: -0.02em;
+}
+
+.cls-159 {
+  letter-spacing: 0.01em;
+}
