@@ -31,14 +31,25 @@ $(document).on "turbolinks:load", ->
   #   return  
 
 
-  $('.unit-heading').hover (->
-    textureID = $(this).attr('data-textureid')
-    $(textureID).addClass 'hover-mode'
-    $(this).addClass 'unit-heading-extend'
-    return 
-  ), ->
-    textureID = $(this).attr('data-textureid')
-    $(textureID).removeClass 'hover-mode'
-    $(this).removeClass 'unit-heading-extend'
-    return
+  # $('.unit-heading').hover (->
+  #   textureID = $(this).attr('data-textureid')
+  #   $(textureID).addClass 'hover-mode'
+  #   $(this).addClass 'unit-heading-extend'
+  #   return 
+  # ), ->
+  #   textureID = $(this).attr('data-textureid')
+  #   $(textureID).removeClass 'hover-mode'
+  #   $(this).removeClass 'unit-heading-extend'
+  #   return
 
+
+
+  # $('[data-toggle="tooltip"]').tooltip({container:'body'});
+  
+  
+  $('[data-name="Kuphus"]').tooltip({ 
+    'container': 'body'
+    'title': 'Hello'
+  })
+  
+  # transform="translate(302.09 670.9)

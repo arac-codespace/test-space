@@ -1,11 +1,16 @@
 // CUSTOM SVG CSS
 
+.tooltip {
+  top: 100px;
+}
+
 .svg-bg {
   background-color: #efefef;  
 }
 
 #hitbox-fill {
   mix-blend-mode: multiply;
+  z-index: -999;
 }
 
 rect.unit-heading-extend {
