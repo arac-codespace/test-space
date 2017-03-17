@@ -3116,8 +3116,6 @@
         <text class="cls-88" transform="translate(856.98 408.24)"><tspan class="cls-101">T</tspan><tspan x="5.88" y="0">he e</tspan><tspan class="cls-90" x="27.11" y="0">v</tspan><tspan x="32.76" y="0">e</tspan><tspan class="cls-95" x="38.77" y="0">n</tspan><tspan class="cls-100" x="45.38" y="0">tual abs</tspan><tspan class="cls-92" x="84.49" y="0">c</tspan><tspan x="89.79" y="0">en</tspan><tspan class="cls-105" x="102.47" y="0">c</tspan><tspan x="107.77" y="0">e of </tspan><tspan class="cls-102" x="128.96" y="0">k</tspan><tspan x="134.64" y="0">uphus implies a shi</tspan><tspan class="cls-128" x="229.78" y="0">f</tspan><tspan x="233.42" y="0">t </tspan><tspan class="cls-106" x="239.94" y="0">t</tspan><tspan x="243.84" y="0">o </tspan><tspan class="cls-129" x="0" y="14.4">“</tspan><tspan x="3.85" y="14.4">shall</tspan><tspan class="cls-109" x="26.71" y="14.4">o</tspan><tspan class="cls-49" x="33.22" y="14.4">w</tspan><tspan x="41.93" y="14.4">e</tspan><tspan class="cls-123" x="47.94" y="14.4">r</tspan><tspan class="cls-130" x="52.22" y="14.4">”</tspan><tspan x="55.44" y="14.4" xml:space="preserve"> e</tspan><tspan class="cls-103" x="64" y="14.4">n</tspan><tspan x="70.5" y="14.4">vi</tspan><tspan class="cls-49" x="79.08" y="14.4">r</tspan><tspan class="cls-100" x="82.88" y="14.4">onme</tspan><tspan class="cls-97" x="112.15" y="14.4">n</tspan><tspan class="cls-100" x="118.76" y="14.4">t</tspan><tspan class="cls-131" x="122.73" y="14.4">s</tspan><tspan class="cls-117" x="127.35" y="14.4">.</tspan><tspan class="cls-101" x="0" y="28.8">T</tspan><tspan x="5.88" y="28.8">his </tspan><tspan class="cls-92" x="22.64" y="28.8">c</tspan><tspan x="27.95" y="28.8">oupled with the p</tspan><tspan class="cls-90" x="116.96" y="28.8">r</tspan><tspan class="cls-96" x="120.77" y="28.8">esen</tspan><tspan class="cls-105" x="144.2" y="28.8">c</tspan><tspan x="149.51" y="28.8">e of algal binds</tspan><tspan class="cls-106" x="225" y="28.8">t</tspan><tspan x="228.9" y="28.8">one </tspan><tspan class="cls-110" x="250.7" y="28.8">a</tspan><tspan class="cls-117" x="256.44" y="28.8">t </tspan><tspan x="0" y="43.2">he </tspan><tspan class="cls-92" x="15.22" y="43.2">t</tspan><tspan x="19.12" y="43.2">op of this pa</tspan><tspan class="cls-122" x="81.06" y="43.2">r</tspan><tspan x="84.92" y="43.2">asequen</tspan><tspan class="cls-105" x="127.51" y="43.2">c</tspan><tspan class="cls-117" x="132.81" y="43.2">e is </tspan><tspan class="cls-105" x="151.47" y="43.2">c</tspan><tspan x="156.78" y="43.2">onsis</tspan><tspan class="cls-106" x="182.34" y="43.2">t</tspan><tspan x="186.24" y="43.2">e</tspan><tspan class="cls-95" x="192.25" y="43.2">n</tspan><tspan x="198.86" y="43.2">t with the </tspan><tspan x="0" y="57.6">land</tspan><tspan class="cls-97" x="22.04" y="57.6">w</tspan><tspan x="30.83" y="57.6">a</tspan><tspan class="cls-90" x="36.61" y="57.6">r</tspan><tspan x="40.42" y="57.6">d shi</tspan><tspan class="cls-128" x="63.95" y="57.6">f</tspan><tspan class="cls-96" x="67.58" y="57.6">t of the f</tspan><tspan class="cls-119" x="109.43" y="57.6">r</tspan><tspan x="113.4" y="57.6">in</tspan><tspan class="cls-92" x="122.87" y="57.6">g</tspan><tspan x="129.5" y="57.6">ing </tspan><tspan class="cls-49" x="148.22" y="57.6">r</tspan><tspan x="152.03" y="57.6">ee</tspan><tspan class="cls-121" x="164.05" y="57.6">f</tspan><tspan x="167.16" y="57.6">.</tspan></text>
       </g>
       <g id="Layer_7" data-name="Layer 7">
-        <rect class="cls-132" x="154.96" y="367.12" width="43.75" height="13.5"/>
-        <rect class="cls-132" x="155.3" y="782.79" width="43.75" height="13.5"/>
         <text class="cls-133" transform="translate(156.16 2070.72)">Unit 1</text>
         <text class="cls-133" transform="translate(156.16 1881.72)">Unit 2</text>
         <text class="cls-133" transform="translate(156.16 1771.72)">Unit 3</text>
@@ -3434,11 +3432,24 @@
 <script type="text/javascript">
 
 
+  // Define Zoom Function Event Listener
+  function zoomFunction() { 
+  var transform = d3.zoomTransform(this);
+  d3.select(".cls-11")
+  .attr("transform", "translate(" + transform.x + "," + transform.y + ") scale(" + transform.k + ")");
+  }
+  
+  // Define Zoom Behavior
+  var zoom = d3.zoom()
+  .scaleExtent([0.2, 10])
+  .on("zoom", zoomFunction);
 
-  // var text = d3.select(this).attr("data-name");
+  // Calls zoom on svg
+  var svg = d3.select('#strat-column').call(zoom);
+
 
   
-
+  // Tooltip D3
   var tooltip = d3.select("body")
   	.append("div")
   	.attr('class','tool')
@@ -3449,11 +3460,9 @@
   	
   d3.selectAll('#Fossils>use').attr('class', 'icons');
   
-  // var icons = d3.select('.icons');
-  
+
   d3.selectAll('.icons')
   	.on("mouseover", function(){ 
-  	 // var dataname = d3.select(this).attr('data-name');
   	  return tooltip.style("visibility", "visible").text(d3.select(this).attr('data-name'))
   	  ;})
   	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
