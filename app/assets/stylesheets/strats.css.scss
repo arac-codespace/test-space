@@ -20,14 +20,14 @@
 // Fill color layer is above the texture layers. Use multiply/overlay to make textures
 // show or reorder layers in SVG...
 #hitbox-fill {
-  mix-blend-mode: overlay;
+  mix-blend-mode: multiply;
 }
 
 // This class is added with JS.  It extends the fill color.
 rect.unit-heading-extend {
   width: 61.4%;
   fill: rgba(122, 206, 210, 0.52);
-  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
   stroke: none;
   // stroke: transparent;
 }

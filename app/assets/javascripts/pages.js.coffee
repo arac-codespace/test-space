@@ -1,35 +1,35 @@
 $(document).on "turbolinks:load", ->
     
-#   #Click to toggle - bad practice
+  # HOME PAGE JS
+      
+  #Click to toggle - bad practice
   
-#   # $('#layer-heading-1').click ->
-#   #   $('#layer-description-1').fadeToggle()
+  # $('#layer-heading-1').click ->
+  #   $('#layer-description-1').fadeToggle()
     
-#   # $('#layer-heading-2').click ->
-#   #   $('#layer-description-2').fadeToggle()
+  # $('#layer-heading-2').click ->
+  #   $('#layer-description-2').fadeToggle()
   
-#   # $('#layer-heading-3').click ->
-#   #   $('#layer-description-3').fadeToggle()
+  # $('#layer-heading-3').click ->
+  #   $('#layer-description-3').fadeToggle()
     
-#   # $('#layer-heading-4').click ->
-#   #   $('#layer-description-4').fadeToggle()    
+  # $('#layer-heading-4').click ->
+  #   $('#layer-description-4').fadeToggle()    
     
     
 
-#   # Click to toggle
+  # Click to toggle
   
-#   $('.layer-heading').on 'click', ->
-#     descriptionID = $(this).attr('data-descriptionid')
-#     $(descriptionID).slideToggle('fast')
-#     return  
+  $('.layer-heading').on 'click', ->
+    descriptionID = $(this).attr('data-descriptionid')
+    $(descriptionID).slideToggle('fast')
+    return  
 
 
-  
-#   # $('.unit-heading').on 'click', ->
-#   #   textureID = $(this).attr('data-textureid')
-#   #   $(textureID).slideToggle('fast')
-#   #   return  
+# STRAT COLUMN JS
 
+# Strat column JS to highlight text and extend the fill color over the
+# row.
 
   $('.unit-heading').hover (->
     textureID = $(this).attr('data-textureid')
