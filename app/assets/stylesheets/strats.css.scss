@@ -1,21 +1,32 @@
 // CUSTOM SVG CSS
-
-.tooltip {
-  top: 100px;
+// Tooltip css
+.tool {
+  background: #eee;
+  box-shadow: 0 0 5px #999999;
+  color: #333;
+  font-size: 12px;
+  left: 130px;
+  padding: 10px;
+  text-align: center;
+  top: 95px;
+  width: 80px;
 }
 
+// SVG wrapper
 .svg-bg {
   background-color: #efefef;  
 }
 
+// Fill color layer is above the texture layers. Use multiply/overlay to make textures
+// show or reorder layers in SVG...
 #hitbox-fill {
-  mix-blend-mode: multiply;
-  z-index: -999;
+  mix-blend-mode: overlay;
 }
 
+// This class is added with JS.  It extends the fill color.
 rect.unit-heading-extend {
   width: 61.4%;
-  // fill: rgba(122, 206, 210, 0.52);
+  fill: rgba(122, 206, 210, 0.52);
   mix-blend-mode: normal;
   stroke: none;
   // stroke: transparent;

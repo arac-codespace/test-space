@@ -10,5 +10,8 @@ class PagesController < ApplicationController
   def strat
   end
   
+  def d3js
+  end
+  
   
 end

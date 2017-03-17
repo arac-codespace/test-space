@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   get '/columns', to: 'pages#columns'
   get '/strat', to: 'pages#strat'
+  get '/d3js', to: 'pages#d3js'
   
 end
