@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   get '/columns', to: 'pages#columns'
   get '/strat', to: 'pages#strat'
   get '/d3js', to: 'pages#d3js'
+  get '/dimplejs', to: 'pages#dimplejs'
+  
+  
+  
   get '/data/load', to: 'pages#load'
-
-  get '/data/load', to: 'pages#home'
+  get '/data/exampledata', to: 'pages#exampledata'
   
 end
