@@ -1,0 +1,27 @@
+  <script>
+    var margin = 75,
+        width = 1400 - margin,
+        height = 600 - margin;
+    
+        var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width + margin)
+            .attr("height", height + margin)
+            .append('g')
+            .attr('class', 'map');
+    
+    var projection = d3.geoMercator().scale(170).translate([width/2, height/2]);
+
+    var path = d3.geoPath()
+      .projection(projection);
+      
+    var url = "/data/world_countries.json";
+    d3.json(url, function(err, geojson) {
+      
+      var map = svg.append("path")
+          .attr("d", path(geojson)).style('fill', '#5bf18d').style('stroke','black').style('stroke-width', 0.5);
+   
+    })  // end of d3json load function for countries
+    
+
+</script>

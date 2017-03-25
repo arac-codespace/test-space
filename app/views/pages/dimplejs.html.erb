@@ -1,16 +1,61 @@
 <div id="chartContainer">
   <script type="text/javascript">
-    var svg = dimple.newSvg("#chartContainer", 590, 400);
-    d3.json("/data/exampledata.json", function (data) {
+    var svg = dimple.newSvg("#chartContainer", 800, 400);
+    // The var data only exists in the function, so this var is to set 
+    // the json data and refer to it in the JS console.  
+    var _data;
+    function draw(data) {
+      _data = data;
+      // The following function takes a d3 element to append the chart to
+      // and the data-set to use.  svg refers to the var specified above and
+      // data loaded and passed to the draw function.
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(60, 30, 510, 305)
+      // All arguments are required.  x position, y position, width and height.
+      // Note that the position and size transformations occur within the chart
+      // container and they don't affect the axis size.
+      myChart.setBounds(60, 30, 610, 305);
+      // This line specifies the type of the x-axis represent.  The first
+      // argument is the axis to add, the seccond is the string that represents
+      // the column name of what we want to plug into the axis
       var x = myChart.addCategoryAxis("x", "Month");
       x.addOrderRule("Date");
+      // Defines y-axis. 
       myChart.addMeasureAxis("y", "Unit Sales");
+      // This line specifies the type of chart we want to create.  The first 
+      // argument is used to group the bars by a certain category.  Here we
+      // use null to prevent this behaviour.  The second argument draws the
+      // actual chart.
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
-    });
+    };
+    
+    d3.json('/data/exampledata.json', draw);    
   </script>
 </div>
 
- 
+</br>
+
+<div id="chartContainerInverse">
+  <script type="text/javascript">
+    var svgi = dimple.newSvg("#chartContainerInverse", 800, 600);
+    var _idata;
+    function drawi(data) {
+      _idata = data;
+
+      var myCharti = new dimple.chart(svgi, data);
+      myCharti.setBounds(60, 30, 610, 305);
+
+      var xi = myCharti.addCategoryAxis("y", "Month");
+      xi.addOrderRule("Date");
+
+      myCharti.addMeasureAxis("x", "Unit Sales");
+
+      myCharti.addSeries(null, dimple.plot.bar);
+      myCharti.draw();
+    };
+    
+    d3.json('/data/exampledata.json', drawi);    
+  </script>
+</div>
+
+</br>

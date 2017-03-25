@@ -1,0 +1,28 @@
+[
+	{
+		"Formation": "Ponce Limestone",
+		"unit_id": 26,
+		"Thickness": 1.0,
+		"Rock_Type": 2
+
+	},
+	{
+		"Formation": "Ponce Limestone",		
+		"unit_id": 2,
+		"Thickness": 3.0,
+		"Rock_Type": 3
+	},
+	{
+		"Formation": "Ponce Limestone",			
+		"unit_id": 3,
+		"Thickness": 15.0,
+		"Rock_Type": 2
+	},
+	{
+		"Formation": "Ponce Limestone",			
+		"unit_id": 4,
+		"Thickness": 20.0,
+		"Rock_Type": 3
+	}
+	
+]

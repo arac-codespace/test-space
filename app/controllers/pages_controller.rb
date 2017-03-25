@@ -25,4 +25,22 @@ class PagesController < ApplicationController
     render :json => @exampledata
   end
   
+  def worldcupmap
+  end
+  
+  def worldcountries
+    @geodata = File.read("app/assets/json/world_countries.json")
+    render :json => @geodata
+  end
+  
+  def worldcupgeo
+    @worldcupgeodata = File.read("app/assets/json/worldcup_geo.json")
+    render :json => @worldcupgeodata
+  end
+  
+  def stratdata
+    @stratdata = File.read('app/assets/json/stratdata.json')
+    render :json => @stratdata
+  end
+  
 end
