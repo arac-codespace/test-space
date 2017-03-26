@@ -99,59 +99,106 @@
 
 <script>
 
-var width = 800;
-var height = 1000;
-
-var x = d3.scaleLinear()
-    .range([0, width]);
+var margin = {top: 40, right: 50, bottom: 50, left: 60},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
     
-var y = d3.scaleLinear()
-  .range([0, 1000])
-  
-var stratChart = d3.select(".stratChart")
-    .attr("width", width)
 
+// x-axis scale!
+var x = d3.scaleBand()
+    .rangeRound([0, width])
+    .padding(1.0);
+    var domain_array = ["Clay", "Silt", "VF Sandstone", "F Sandstone", "M Sandstone", "C Sandstone", "VC Sandstone", "Granule", "Pebble", "Cobble","Boulder"]
+    x.domain(domain_array);
+
+// y-axis scale!    
+var y = d3.scaleLinear()
+  .range([height, 0])
+  
+// Selects the svg container and sets width attribute.  
+var stratChart = d3.select(".stratChart")
+    .attr("width", width + margin.left + margin.right)
+    
+// Sets the height for the svg/chart container.
+stratChart.attr('height', height + margin.top + margin.bottom);
+// .append('g').attr("transform", "translate(" + margin.left + "," + margin.top + ")");;    
+
+// For use inside the function.  This allows for the sum of successive thickness.
 var sumPrevThickness = 0;
 
 function drawchart(data){
-
+  
+  // Just sums the thickness of all the datasets in the JSON.
   var totalThickness = d3.sum(data, function(d) { return d.Thickness} );
-
-  stratChart.attr('height', height);
-
-  x.domain([0, d3.max(data, function(d) { return d.Rock_Type; })]);
   
+  // Sets upper domain to the max thickness.
   y.domain([0, totalThickness]);
-  
+
+  // Defines the previous function to store previous thickness value up next
   for(var i = 0; i < data.length; i++) { data[i].previous = data[i-1]; }
 
+  // Bar data bind and transformation
   var bar = stratChart.selectAll("g")
     .data(data)
     .enter().append("g")
     .attr("transform", function(d, i) { 
       
+      // Empty var to store previous thickness
       var prevThickness;
 
+      // To avoid NaN error, make the var 0 when the index is greater than 0
+      // ie.  No previous index exist before index 0/ first data array
       if (i > 0) { prevThickness = d.previous.Thickness}
       else { prevThickness = 0};
-    // debugger;
-    
-    sumPrevThickness += prevThickness;
-    // debugger;
-    
-    return "translate(0," + y(sumPrevThickness) + ")"; 
+
+      // Var defined outside of function allows for the addition of the 
+      // prevThickness value due to how the function loop works.
+      sumPrevThickness += prevThickness;
+      var transSum = y(0) - y(sumPrevThickness);
+      // This is the value that will translate-y the bars right to the top of
+      // the bar located below.  IE: Stack bars.
+      return "translate(0," + transSum + ")"; 
     });
     
-    
+  // Bar drawing  
   bar.append("rect")
       .attr("width", function(d) { return x(d.Rock_Type); })
-      .attr("height", function(d) { return y(d.Thickness); });
+      .attr("height", function(d) { return  y(0) - y(d.Thickness) ; });
+      
+  // x-axis line and ticks
+  d3.select('.stratChart').append('g').attr("class", "axis axis--x")
+  .attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
+
+  // y-axis line and ticks
+  d3.select('.stratChart').append("g")
+      .attr("class", "axis axis--y")
+      .call(d3.axisLeft(y).ticks(10, "s"))
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -45)
+      .attr("x", '-20%')
+      .attr("dy", "0.71em")
+      .attr("text-anchor", "end")
+      .text("Frequency");
 
   // bar.append("text")
   //     .attr("x", function(d) { return x(d.Rock_Type) - 3; })
   //     .attr("y", barHeight / 2)
   //     .attr("dy", ".35em")
   //     .text(function(d) { return d.unit_id; });    
+
+  // Custom x-axis transformation depending on length
+  d3.selectAll('.axis--x > g > text')
+    .filter(function(d){ return d.length <= 5;} )
+    .attr("x", 25.5);
+    
+  d3.selectAll('.axis--x > g > text')
+    .filter(function(d){ return d.length >= 6;} )
+    .attr("x", 45.5);
+    
+  d3.selectAll('.axis--x > g > text')
+    .filter(function(d){ return d.length >= 11;} )
+    .attr("x", 75.5);
 
 };
   
