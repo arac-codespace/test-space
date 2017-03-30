@@ -1,50 +1,50 @@
  <!--CIRCLE WITH TOOLTIP EXAMPLE-->
-<div class="example_div"></div>
+<!--<div class="example_div"></div>-->
 
-<script type="text/javascript">
-  var tooltip = d3.select("body")
-  	.append("div")
-  	.style("position", "absolute")
-  	.style("z-index", "10")
-  	.style("visibility", "hidden")
-  	.text("a simple tooltip");
+<!--<script type="text/javascript">-->
+<!--  var tooltip = d3.select("body")-->
+<!--  	.append("div")-->
+<!--  	.style("position", "absolute")-->
+<!--  	.style("z-index", "10")-->
+<!--  	.style("visibility", "hidden")-->
+<!--  	.text("a simple tooltip");-->
   	
-  var sampleSVG = d3.select(".example_div")
-  	.append("svg:svg")
-  	.attr("class", "sample")
-  	.attr("width", 300)
-  	.attr("height", 300);    
+<!--  var sampleSVG = d3.select(".example_div")-->
+<!--  	.append("svg:svg")-->
+<!--  	.attr("class", "sample")-->
+<!--  	.attr("width", 300)-->
+<!--  	.attr("height", 300);    -->
   	
-  d3.select(".example_div svg")
-  	.append("svg:circle")
-  	.attr("stroke", "black")
-  	.attr("fill", "aliceblue")
-  	.attr("r", 50)
-  	.attr("cx", 52)
-  	.attr("cy", 52)
-  	.on("mouseover", function(){return tooltip.style("visibility", "visible");})
-  	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-  	.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+<!--  d3.select(".example_div svg")-->
+<!--  	.append("svg:circle")-->
+<!--  	.attr("stroke", "black")-->
+<!--  	.attr("fill", "aliceblue")-->
+<!--  	.attr("r", 50)-->
+<!--  	.attr("cx", 52)-->
+<!--  	.attr("cy", 52)-->
+<!--  	.on("mouseover", function(){return tooltip.style("visibility", "visible");})-->
+<!--  	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})-->
+<!--  	.on("mouseout", function(){return tooltip.style("visibility", "hidden");});-->
 
-</script>
+<!--</script>-->
 
 
-<div class='main'></div>
+<!--<div class='main'></div>-->
 
-<script type='text/javascript'>
-  var svg = d3.select('.main').append('svg');
-  svg.attr('width', 600).attr('height',300);
+<!--<script type='text/javascript'>-->
+<!--  var svg = d3.select('.main').append('svg');-->
+<!--  svg.attr('width', 600).attr('height',300);-->
 
-  var y = d3.scaleLinear().domain([15,90]).range([250,0]);  
-  var x = d3.scaleLog().domain([250,100000]).range([0,600]);
-  var r = d3.scaleSqrt().domain([52070, 1380000000]).range([10, 40]);  
+<!--  var y = d3.scaleLinear().domain([15,90]).range([250,0]);  -->
+<!--  var x = d3.scaleLog().domain([250,100000]).range([0,600]);-->
+<!--  var r = d3.scaleSqrt().domain([52070, 1380000000]).range([10, 40]);  -->
   
-  svg.append('circle').attr('r', r(1380000000)).attr('fill','red').attr('cx', x(13330)).attr('cy', y(77));
+<!--  svg.append('circle').attr('r', r(1380000000)).attr('fill','red').attr('cx', x(13330)).attr('cy', y(77));-->
   
-</script>
+<!--</script>-->
 
 
-</br>
+<!--</br>-->
 
 
 <!--<svg class="iechart"></svg>-->
@@ -90,7 +90,7 @@
   <!--//   return d;-->
   <!--// }-->
 
-</script>
+<!--</script>-->
 
 
 </br>
@@ -164,6 +164,7 @@ function drawchart(data){
   var color = d3.scaleOrdinal(d3.schemeCategory20c);  
   
   bar.append("rect")
+      .attr("class", "bar")
       .attr("fill",function(d,i){return color(i);})
       .attr("width", function(d) { return x(d.Rock_Type); })
       .attr("height", function(d) { return  y(0) - y(d.Thickness) ; });
@@ -202,6 +203,26 @@ function drawchart(data){
   d3.selectAll('.axis--x > g > text')
     .filter(function(d){ return d.length >= 11;} )
     .attr("x", 75.5);
+
+
+  // Tooltip D3 settings
+  var tooltip = d3.select("body")
+  	.append("div")
+  	.attr('class','tool')
+  	.style("position", "absolute")
+  	.style("z-index", "10")
+  	.style("visibility", "hidden");
+
+  // Tooltip action
+  d3.selectAll('.bar')
+  	.on("mouseover", function(d) { 
+  	  return tooltip.style("visibility", "visible").html(
+  	    "Unit " + d.unit_id + "</br>" + "Thickness: " + d.Thickness + "</br>" +
+  	    "Rock Type: " + d.Rock_Type
+  	    )
+  	  ;})
+  	.on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
+  	.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
 };
   
