@@ -21,3 +21,7 @@
 .axis--x > g > text {
   transform:rotate(40deg);  
 }
+
+.bar:hover {
+  fill: brown;
+}

@@ -99,7 +99,7 @@
 
 <script>
 
-var margin = {top: 40, right: 50, bottom: 50, left: 60},
+var margin = {top: 40, right: 50, bottom: 80, left: 60},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     
@@ -110,6 +110,16 @@ var x = d3.scaleBand()
     .padding(1.0);
     var domain_array = ["Clay", "Silt", "VF Sandstone", "F Sandstone", "M Sandstone", "C Sandstone", "VC Sandstone", "Granule", "Pebble", "Cobble","Boulder"]
     x.domain(domain_array);
+
+
+// x-axis scale!
+var x2 = d3.scaleBand()
+    .rangeRound([0, width])
+    .padding(1.0);
+    var domain_array2 = ["Mudstone", "Wacke", "Packstone", "Grainstone", "Rudstone & Boundstone"]
+    x2.domain(domain_array2);
+
+
 
 // y-axis scale!    
 var y = d3.scaleLinear()
@@ -166,12 +176,27 @@ function drawchart(data){
   bar.append("rect")
       .attr("class", "bar")
       .attr("fill",function(d,i){return color(i);})
-      .attr("width", function(d) { return x(d.Rock_Type); })
+      .attr("width", function(d) {
+        // Checks to which array the Rock Type belongs to and uses the
+        // corresponding x scale.
+        var found = domain_array.includes(d.Rock_Type);
+        
+        if (found === true) {
+          return x(d.Rock_Type)
+        } else {
+          return x2(d.Rock_Type)
+        };
+        ;})
       .attr("height", function(d) { return  y(0) - y(d.Thickness) ; });
       
   // x-axis line and ticks
   d3.select('.stratChart').append('g').attr("class", "axis axis--x")
   .attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
+  
+  
+  // x2-axis line and ticks
+  d3.select('.stratChart').append('g').attr("class", "axis axis--x2")
+  .attr("transform", "translate(0," + (height + 70)  + ")").call(d3.axisBottom(x2));
 
   // y-axis line and ticks
   d3.select('.stratChart').append("g")
