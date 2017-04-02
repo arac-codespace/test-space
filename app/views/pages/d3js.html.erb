@@ -99,7 +99,7 @@
 
 <script>
 
-var margin = {top: 40, right: 50, bottom: 80, left: 60},
+var margin = {top: 40, right: 50, bottom: 125, left: 60},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
     
@@ -108,7 +108,7 @@ var margin = {top: 40, right: 50, bottom: 80, left: 60},
 var x = d3.scaleBand()
     .rangeRound([0, width])
     .padding(1.0);
-    var domain_array = ["Clay", "Silt", "VF Sandstone", "F Sandstone", "M Sandstone", "C Sandstone", "VC Sandstone", "Granule", "Pebble", "Cobble","Boulder"]
+    var domain_array = ["Clay", "Silt", "Very Fine Sandstone", "Fine Sandstone", "Medium Sandstone", "Coarse Sandstone", "Very Coarse Sandstone", "Granule", "Pebble", "Cobble","Boulder"]
     x.domain(domain_array);
 
 
@@ -191,12 +191,18 @@ function drawchart(data){
       
   // x-axis line and ticks
   d3.select('.stratChart').append('g').attr("class", "axis axis--x")
-  .attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x));
+  .attr("transform", "translate(0," + height + ")").call(d3.axisBottom(x)).selectAll(".tick text")
+  .call(wrap, x.bandwidth());
   
   
   // x2-axis line and ticks
   d3.select('.stratChart').append('g').attr("class", "axis axis--x2")
-  .attr("transform", "translate(0," + (height + 70)  + ")").call(d3.axisBottom(x2));
+  .attr("transform", "translate(0," + (height + 100)  + ")").call(d3.axisTop(x2))
+  .append("text")
+      .attr("y", 30)
+      .attr("x", '52%')
+      .attr("dy", "0.71em")
+      .text("ROCK TYPE");;
 
   // y-axis line and ticks
   d3.select('.stratChart').append("g")
@@ -205,10 +211,9 @@ function drawchart(data){
     .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", -45)
-      .attr("x", '-20%')
+      .attr("x", '-15%')
       .attr("dy", "0.71em")
-      .attr("text-anchor", "end")
-      .text("Thickness (m)");
+      .text("THICKNESS (m)");
 
   // bar.append("text")
   //     .attr("x", '5%')
@@ -216,18 +221,46 @@ function drawchart(data){
   //     .attr("dy", ".35em")
   //     .text(function(d) { return "Unit" + d.unit_id; });    
 
-  // Custom x-axis transformation depending on length
-  d3.selectAll('.axis--x > g > text')
+  // Wrap function provided by Mike Bostock.  The function measures the width of 
+  // each band which is provided by x.bandwidth when the function is called above
+  // to determine whether a line break is required or not.
+  function wrap(text, width) {
+    text.each(function() {
+      var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1, // ems
+          y = text.attr("y"),
+          dy = parseFloat(text.attr("dy")),
+          tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+        }
+      }
+    });
+  }
+  
+  // Custom x2-axis label transformation depending on length
+  d3.selectAll('.axis--x2 > g > text')
     .filter(function(d){ return d.length <= 5;} )
-    .attr("x", 25.5);
+    .attr("y", 15);
     
-  d3.selectAll('.axis--x > g > text')
+  d3.selectAll('.axis--x2 > g > text')
     .filter(function(d){ return d.length >= 6;} )
-    .attr("x", 45.5);
+    .attr("y", 15);
     
-  d3.selectAll('.axis--x > g > text')
+  d3.selectAll('.axis--x2 > g > text')
     .filter(function(d){ return d.length >= 11;} )
-    .attr("x", 75.5);
+    .attr("y", 15);    
+    
 
 
   // Tooltip D3 settings

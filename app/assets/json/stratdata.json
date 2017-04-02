@@ -11,7 +11,7 @@
 		"Formation": "Ponce Limestone",		
 		"unit_id": 2,
 		"Thickness": 3.0,
-		"Rock_Type": "F Sandstone"
+		"Rock_Type": "Fine Sandstone"
 	},
 	{
 		"Formation": "Ponce Limestone",			
@@ -23,7 +23,7 @@
 		"Formation": "Ponce Limestone",			
 		"unit_id": 4,
 		"Thickness": 20.0,
-		"Rock_Type": "M Sandstone"
+		"Rock_Type": "Medium Sandstone"
 	},
 	
 	{
@@ -37,7 +37,7 @@
 		"Formation": "Ponce Limestone",			
 		"unit_id": 5,
 		"Thickness": 15.0,
-		"Rock_Type": "VC Sandstone"
+		"Rock_Type": "Very Coarse Sandstone"
 	},	
 	{
 		"Formation": "Ponce Limestone",			

@@ -18,8 +18,13 @@
   stroke: black;
 }
 
+// Centers the x labels after calling the wrap function
 .axis--x > g > text {
-  transform:rotate(40deg);  
+  text-anchor: inherit;  
+}
+
+.axis--x2 > g > text {
+  text-anchor: inherit;  
 }
 
 .bar:hover {
