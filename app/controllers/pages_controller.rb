@@ -43,4 +43,7 @@ class PagesController < ApplicationController
     render :json => @stratdata
   end
   
+  def arcgis
+  end
+  
 end

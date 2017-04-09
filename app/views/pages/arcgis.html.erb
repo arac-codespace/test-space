@@ -1,0 +1,49 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+        
+      <div class='deforestation-bg'>  
+        <div class = 'button-grp'>
+          <button id="zoom_in">+</button>
+          <button id="zoom_out">-</button>
+        </div>
+        
+        <div class='deforestation-svg-container'>
+          <%= show_svg('amazon_ecoforest.svg')%>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+  // Define Zoom Function Event Listener
+  function zoomFunction() { 
+  var transform = d3.zoomTransform(this);
+  d3.select("#deforestation_svg")
+  .attr("transform", "translate(" + transform.x + "," + transform.y + ") scale(" + transform.k + ")");
+  }
+  
+  // Define Zoom Behavior
+  var zoom = d3.zoom()
+  .scaleExtent([1, 1.2])
+  .on("zoom", zoomFunction);
+
+  // Calls zoom on svg
+  var svg = d3.select('#deforestation_svg').call(zoom);
+
+    d3.select('#zoom_in')
+    .on("click", function() {
+      zoom.scaleBy(svg, 2);
+    });
+    
+    d3.select('#zoom_out')  
+    .on("click", function() {
+      zoom.scaleBy(svg, 0.5);
+    })    
+
+</script>
