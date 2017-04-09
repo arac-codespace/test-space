@@ -6,6 +6,7 @@
         <div class = 'button-grp'>
           <button id="zoom_in">+</button>
           <button id="zoom_out">-</button>
+          <button id="reset_btn">Reset</button>
         </div>
         
         <div class='deforestation-svg-container'>
@@ -44,6 +45,12 @@
     d3.select('#zoom_out')  
     .on("click", function() {
       zoom.scaleBy(svg, 0.5);
-    })    
+    });    
+  
+  d3.select("#reset_btn")
+  .on("click", function() {
+    svg.attr("transform", "translate(" + 0 + "," + 0 + ") scale(" + 1 + ")");;    
+  });  
+ 
 
 </script>
